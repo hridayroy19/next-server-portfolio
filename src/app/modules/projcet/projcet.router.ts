@@ -6,6 +6,6 @@ const router = express.Router();
 router.post('/create', ProjcetController.createProjcet);
 router.get('/all', ProjcetController.allprojcet);
 router.delete('/:productId', ProjcetController.deletprojcet);
-router.put('/:productId', ProjcetController.updateProjcet);
+router.get('/:productId', ProjcetController.getIdByProjcet);
 
 export const ProjcetRouter = router;

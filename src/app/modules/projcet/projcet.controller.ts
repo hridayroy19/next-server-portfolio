@@ -56,11 +56,10 @@ const deletprojcet = async (req: Request, res: Response) => {
 };
 
 //Projcet update by id
-const updateProjcet = async (req: Request, res: Response) => {
+const getIdByProjcet = async (req: Request, res: Response) => {
   try {
     const productId = req.params.productId;
-    const data = req.body;
-    const result = await ProjcetService.updateProjcetBD(productId, data);
+    const result = await ProjcetService.updateProjcetBD(productId);
     res.status(200).json({
       status: true,
       message: 'Projcet updated successfully ',
@@ -79,5 +78,5 @@ export const ProjcetController = {
   createProjcet,
   allprojcet,
   deletprojcet,
-  updateProjcet,
+  getIdByProjcet,
 };

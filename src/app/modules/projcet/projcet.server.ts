@@ -19,10 +19,8 @@ const deleteProjcetDB = async (id: string) => {
 };
 
 //update data in database
-const updateProjcetBD = async (id: string, data: TProjcet) => {
-  const result = await Projcet.findByIdAndUpdate(id, data, {
-    new: true,
-  });
+const updateProjcetBD = async (productId: string, ) => {
+  const result = await Projcet.findById(productId);
   return result;
 };
 

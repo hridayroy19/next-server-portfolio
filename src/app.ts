@@ -5,15 +5,17 @@ import cors from 'cors';
 import { StatusCodes } from 'http-status-codes';
 import userRouter from './app/modules/user/user.routes';
 import authRouter from './app/modules/auth/auth.router';
-import { ProjcetRouter } from './app/modules/book/projcet.router';
+import { ProjcetRouter } from './app/modules/projcet/projcet.router';
+import { BlogeRouter } from './app/modules/blog/blog.router';
 
 //perser
 app.use(express.json());
-app.use(cors({ credentials: true }));
+app.use(cors({ credentials: true ,origin:"https://hridoy-chandra-roy.vercel.app" }));
 
 app.use('/api/auth', authRouter);
 app.use('/api/user', userRouter);
 app.use('/api/projcet', ProjcetRouter);
+app.use('/api/blog', BlogeRouter);
 
 
 app.get('/', (req: Request, res: Response) => {
